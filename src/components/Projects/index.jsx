@@ -33,6 +33,7 @@ export default function Projects() {
       year: "2022",
       img: work2,
       title: "YOUR BEST LIBRARY!",
+      link: "https://library-beige-mu.vercel.app/",
       detail:
         "A digital library with curated resources, eBooks, and smart search, built for students and educators with responsive design.",
     },
@@ -41,6 +42,7 @@ export default function Projects() {
       year: "2024",
       img: work3,
       title: "PERSONAL COACHING WEBSITE",
+      link: "https://elie-lifts.vercel.app",
       detail:
         "A modern coaching website with booking, blog, and testimonials, focused on clarity and user-friendly design.",
     },
@@ -49,6 +51,7 @@ export default function Projects() {
       year: "2025",
       img: work1,
       title: "TRAINIFAI",
+      link: "https://trainif-ai.vercel.app",
       detail:
         "An AI-powered fitness platform offering personalized workout plans, real-time tracking, and adaptive routines using machine learning.",
     },
@@ -92,12 +95,15 @@ export default function Projects() {
           <div className="projects--grid--content--works">
             {works.map((item, index) => {
               return (
-                <WorkCard
-                  item={item}
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
                   key={index}
-                  // delay={0.1 * index + 1}
-                  // controls={controls}
-                />
+                  style={{ textDecoration: "none" }}
+                >
+                  <WorkCard item={item} />
+                </a>
               );
             })}
           </div>
